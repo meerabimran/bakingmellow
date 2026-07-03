@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us - Baking Mellow</title>
+  <style>
+    body { margin: 0; font-family: Georgia, serif; background-color: #fff8f0; }
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      background-color: #fff; padding: 10px 40px; box-shadow: 0 2px 5px #00000020; position: sticky; top: 0; z-index: 1000;
+    }
+    .nav-links { display: flex; gap: 25px; align-items: center; }
+    .logo img { height: 60px; }
+    .nav-links a { text-decoration: none; color: #4b2e2e; font-size: 18px; font-weight: bold; }
+    .icons { display: flex; gap: 15px; align-items: center; }
+    .icons a { color: #4b2e2e; font-size: 22px; text-decoration: none; }
+    .nav-links a:hover, .icons a:hover { color: #b8860b; }
+
+    .contact-box { background: white; width: 50%; margin: 50px auto; padding: 30px; border-radius: 20px; box-shadow: 0 4px 10px #00000030; }
+    .contact-box h1 { text-align: center; color: #5C4033; }
+    input, textarea { width: 100%; padding: 12px; margin-top: 15px; border-radius: 10px; border: 1px solid #caa97a; box-sizing: border-box; }
+    button { margin-top: 20px; padding: 12px 25px; background-color: #5C4033; color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 18px; width: 100%; }
+    button:hover { background-color: #b8860b; }
+    footer { background-color: #D2B48C; padding: 15px; text-align: center; color: #4b2e2e; margin-top: 40px; }
+    footer a { color: #4b2e2e; font-weight: bold; text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: #5C4033; }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-links">
+    <div class="logo"><a href="/home"><img src="/logo.jpg" alt="Baking Mellow"></a></div>
+    <a href="/home">Home</a>
+    <a href="/menu">Menu</a>
+    <a href="/about">About Us</a>
+    <a href="/social">Social Media</a>
+    <a href="/contact">Contact Us</a>
+  </div>
+  <div class="icons">
+    <a href="/signup">👤</a>
+    <a href="/login">🔑</a>
+    <a href="/cart">🛒</a>
+  </div>
+</div>
+
+<div class="contact-box">
+  <h1>📞 Get in Touch</h1>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<footer>
+  <p>📍 Sargodha, Pakistan</p>
+  <p>📞 +92 3426275592 | 📧 bakingmellow@gmail.com</p>
+  <p>© 2025 BakingMellow | Powered by MEERAB IMRAN</p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        })
+    });
+    const data = await res.json();
+    if(data.success) { alert('Message sent!'); window.location.href='/home'; }
+    else { alert('Error sending message.'); }
+});
+</script>
+</body>
+</html>

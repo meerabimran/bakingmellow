@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Placed - Baking Mellow</title>
+<style>
+  body { background: #fff8f4; font-family: Georgia, serif; text-align: center; color: #5c4636; }
+  .box { background: white; width: 50%; margin: 80px auto; padding: 40px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  h1 { color: #b69b72; }
+  .order-id { color: #888; font-size: 0.9em; }
+  .btn { display: inline-block; margin-top: 20px; padding: 12px 25px; background: #5c4636; border: none; color: white; text-decoration: none; border-radius: 5px; transition: 0.3s; }
+  .btn:hover { background: #b69b72; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>🎉 Order Placed Successfully!</h1>
+  <p>Thank you for choosing <strong>Baking Mellow</strong>.</p>
+  <div style="background: #fdfdfd; padding: 20px; border: 1px dashed #b69b72; border-radius: 10px;">
+    <h3>Order Summary</h3>
+    <p class="order-id">Order ID: #{{ order.id }}</p>
+    <p>Status: <span style="color: green;">Processing</span></p>
+    <p>Total Paid: <b>Rs {{ order.total }}</b></p>
+    <p>Date: {{ order.order_date }}</p>
+  </div>
+  <br>
+  <a href="/home" class="btn">Return to Home</a>
+  <a href="/my_orders" class="btn" style="background: #b69b72;">View All Orders</a>
+</div>
+</body>
+</html>

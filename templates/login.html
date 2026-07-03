@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Baking Mellow</title>
+  <style>
+    body { background-color: #fff8f0; font-family: Georgia, serif; text-align: center; }
+    h1 { color:#5C4033; }
+    form { background-color:#D2B48C; width: 300px; margin: auto; padding: 50px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    label { font-weight: bold; color:#5C4033; display: block; text-align: left; margin-top: 10px; }
+    input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    input[type="submit"] { background-color: #5C4033; color: white; border: none; margin-top: 15px; cursor: pointer; font-weight: bold; }
+    a { display: block; margin-top: 20px; text-decoration: none; color: #5C4033; font-size: 0.9em; }
+    .navbar { padding: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-links">
+    <a href="/home">← Home</a>
+  </div>
+</div>
+
+<h1>🔐 Baking Mellow 🍩 - Login 👤</h1>
+
+<form id="loginForm">
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter email" required>
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter password" required>
+    <input type="submit" value="Login">
+    <a href="/signup">Don't have an account? Sign Up</a>
+</form>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            email: document.getElementById('email').value,
+            password: document.getElementById('password').value
+        })
+    });
+    const data = await res.json();
+    if(data.success) { 
+        localStorage.setItem('user_id', data.user_id); 
+        alert('Welcome ' + data.name + '!'); 
+        window.location.href='/home'; 
+    } else { alert(data.error); }
+});
+</script>
+</body>
+</html>
