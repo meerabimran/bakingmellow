@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="90" fill="#FDF6F0" stroke="#8B6B4A" stroke-width="4"/>
+  <text x="100" y="90" text-anchor="middle" font-family="'Playfair Display', serif" font-size="36" fill="#8B6B4A" font-weight="700">BM</text>
+  <text x="100" y="130" text-anchor="middle" font-family="'Lato', sans-serif" font-size="14" fill="#6B5B4E" letter-spacing="2">BAKING MELLOW</text>
+</svg>
