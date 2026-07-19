@@ -1,4 +1,4 @@
-# 🧁 Baking Mellow – Premium Bakery E-Commerce Platform
+ # 🧁 Baking Mellow – Premium Bakery E-Commerce Platform
 
 ![Baking Mellow Logo](images/logo.png)
 
@@ -90,4 +90,4 @@ To set up the project on your local machine:
 1. **Install XAMPP** or **WAMP**.
 2. **Clone the repository** into your `htdocs` folder:
    ```bash
-   git clone https://github.com/meerabimran/bakingmellow.git
+   git clone https://github.com/meerabimran/baking-mellow.git
