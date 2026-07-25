@@ -3,7 +3,6 @@
 session_start();
 include '../includes/db.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +15,13 @@ include '../includes/db.php';
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     
     <style>
         .hero {
             background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
-                        url('images/hero-bg.jpg');
+                        url('../images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -99,7 +98,7 @@ include '../includes/db.php';
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
                 <div class="hero-image-wrapper">
-                    <img src="images/bm.png" alt="Premium Cake">
+                    <img src="../images/bm.png" alt="Premium Cake">
                     <div class="floating-badge">
                         <span>Premium</span>
                         <small>Ingredients</small>
@@ -124,25 +123,25 @@ include '../includes/db.php';
             <div class="categories-grid">
                 <div class="category-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="category-image">
-                        <img src="images/category-cakes.jpg" alt="Cakes">
+                        <img src="../images/category-cakes.jpg" alt="Cakes">
                         <div class="category-overlay"><h3>Cakes</h3><span>From Rs. 2,500</span></div>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="category-image">
-                        <img src="images/category-cupcakes.jpg" alt="Cupcakes">
+                        <img src="../images/category-cupcakes.jpg" alt="Cupcakes">
                         <div class="category-overlay"><h3>Cupcakes</h3><span>From Rs. 1,800</span></div>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="category-image">
-                        <img src="images/category-pastries.jpg" alt="Pastries">
+                        <img src="../images/category-pastries.jpg" alt="Pastries">
                         <div class="category-overlay"><h3>Pastries</h3><span>From Rs. 750</span></div>
                     </div>
                 </div>
                 <div class="category-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="category-image">
-                        <img src="images/category-bread.jpg" alt="Bread">
+                        <img src="../images/category-bread.jpg" alt="Bread">
                         <div class="category-overlay"><h3>Artisan Bread</h3><span>From Rs. 600</span></div>
                     </div>
                 </div>
@@ -161,7 +160,7 @@ include '../includes/db.php';
             <div class="products-grid">
                 <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-image">
-                        <img src="images/product-chocolate-cake.jpg" alt="Belgian Chocolate Cake">
+                        <img src="../images/product-chocolate-cake.jpg" alt="Belgian Chocolate Cake">
                         <div class="product-badge">Best Seller</div>
                     </div>
                     <div class="product-info">
@@ -175,7 +174,7 @@ include '../includes/db.php';
                 </div>
                 <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="product-image">
-                        <img src="images/product-croissant.jpg" alt="Butter Croissant">
+                        <img src="../images/product-croissant.jpg" alt="Butter Croissant">
                         <div class="product-badge">Fresh</div>
                     </div>
                     <div class="product-info">
@@ -189,7 +188,7 @@ include '../includes/db.php';
                 </div>
                 <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="product-image">
-                        <img src="images/product-strawberry-tart.jpg" alt="Strawberry Tart">
+                        <img src="../images/product-strawberry-tart.jpg" alt="Strawberry Tart">
                         <div class="product-badge">Seasonal</div>
                     </div>
                     <div class="product-info">
@@ -203,7 +202,7 @@ include '../includes/db.php';
                 </div>
                 <div class="product-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="product-image">
-                        <img src="images/product-cinnamon-roll.jpg" alt="Cinnamon Roll">
+                        <img src="../images/product-cinnamon-roll.jpg" alt="Cinnamon Roll">
                         <div class="product-badge">Popular</div>
                     </div>
                     <div class="product-info">
@@ -269,17 +268,17 @@ include '../includes/db.php';
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testimonial-text">"The croissants were unbelievably flaky and buttery. Every bite felt like it came straight from a Parisian bakery."</p>
-                    <div class="testimonial-author"><img src="images/avatar1.jpg" alt="Sarah"><div><h4>Sarah A.</h4><span>Regular Customer</span></div></div>
+                    <div class="testimonial-author"><img src="../images/avatar1.jpg" alt="Sarah"><div><h4>Sarah A.</h4><span>Regular Customer</span></div></div>
                 </div>
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testimonial-text">"The birthday cake exceeded every expectation. Beautifully decorated and incredibly rich in flavor. My family loved it!"</p>
-                    <div class="testimonial-author"><img src="images/avatar2.jpg" alt="Ahmed"><div><h4>Ahmed K.</h4><span>Happy Customer</span></div></div>
+                    <div class="testimonial-author"><img src="../images/avatar2.jpg" alt="Ahmed"><div><h4>Ahmed K.</h4><span>Happy Customer</span></div></div>
                 </div>
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testimonial-text">"Our family now orders every celebration cake from Baking Mellow. The quality is consistently amazing."</p>
-                    <div class="testimonial-author"><img src="images/avatar3.jpg" alt="Hira"><div><h4>Hira M.</h4><span>Loyal Customer</span></div></div>
+                    <div class="testimonial-author"><img src="../images/avatar3.jpg" alt="Hira"><div><h4>Hira M.</h4><span>Loyal Customer</span></div></div>
                 </div>
             </div>
         </div>
@@ -294,12 +293,12 @@ include '../includes/db.php';
                 <p class="section-sub">Behind the scenes, fresh creations, and daily inspiration</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="images/gallery1.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="images/gallery2.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="images/gallery3.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400"><img src="images/gallery4.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500"><img src="images/gallery5.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600"><img src="images/gallery6.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100"><img src="../images/gallery1.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200"><img src="../images/gallery2.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300"><img src="../images/gallery3.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400"><img src="../images/gallery4.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500"><img src="../images/gallery5.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600"><img src="../images/gallery6.jpg" alt="Bakery"><div class="gallery-overlay"><i class="fab fa-instagram"></i></div></div>
             </div>
             <div class="section-footer" data-aos="fade-up">
                 <a href="https://instagram.com/bakingmellow" target="_blank" class="btn-outline"><i class="fab fa-instagram"></i> Follow @bakingmellow</a>

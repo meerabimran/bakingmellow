@@ -17,7 +17,6 @@ if ($order_id <= 0) {
     exit();
 }
 
-// Check if order belongs to user and is pending
 $stmt = $conn->prepare("SELECT id, status FROM orders WHERE id = ? AND user_id = ?");
 $stmt->bind_param("ii", $order_id, $user_id);
 $stmt->execute();
@@ -34,7 +33,6 @@ if ($order['status'] !== 'pending') {
     exit();
 }
 
-// Update order status
 $stmt = $conn->prepare("UPDATE orders SET status = 'cancelled' WHERE id = ?");
 $stmt->bind_param("i", $order_id);
 if ($stmt->execute()) {

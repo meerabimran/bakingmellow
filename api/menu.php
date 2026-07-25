@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'includes/db.php';
+include '../includes/db.php';
 
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $category = isset($_GET['category']) ? $_GET['category'] : '';
@@ -36,8 +36,8 @@ $categories = $conn->query("SELECT DISTINCT category FROM products")->fetch_all(
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 <body>
 
@@ -90,7 +90,7 @@ $categories = $conn->query("SELECT DISTINCT category FROM products")->fetch_all(
                     <?php foreach ($products as $product): ?>
                         <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                             <div class="product-image" onclick="openProductModal(<?php echo $product['id']; ?>)">
-                                <img src="images/<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                <img src="../images/<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                                 <?php if ($product['is_bestseller']): ?><div class="product-badge">Best Seller</div><?php endif; ?>
                                 <?php if ($product['is_new']): ?><div class="product-badge new">New</div><?php endif; ?>
                                 <div class="quick-view"><i class="fas fa-eye"></i> Quick View</div>
@@ -150,8 +150,7 @@ $categories = $conn->query("SELECT DISTINCT category FROM products")->fetch_all(
         </div>
     </div>
 
-    <!-- FOOTER & SCRIPTS (same as index.php) -->
-    <?php include 'includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });
@@ -197,13 +196,13 @@ $categories = $conn->query("SELECT DISTINCT category FROM products")->fetch_all(
 
         let modalProductId = null, modalQty = 1;
         function openProductModal(id) {
-            fetch(`api/get_product.php?id=${id}`)
+            fetch(`get_product.php?id=${id}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.success) {
                         const p = data.product;
                         modalProductId = p.id;
-                        document.getElementById('modalImage').src = `images/${p.image_url}`;
+                        document.getElementById('modalImage').src = `../images/${p.image_url}`;
                         document.getElementById('modalCategory').textContent = p.category;
                         document.getElementById('modalName').textContent = p.name;
                         document.getElementById('modalPrice').textContent = `Rs. ${Number(p.price).toLocaleString()}`;
@@ -226,7 +225,7 @@ $categories = $conn->query("SELECT DISTINCT category FROM products")->fetch_all(
         }
         function addToCartFromModal() {
             if (modalProductId) {
-                fetch(`api/get_product.php?id=${modalProductId}`)
+                fetch(`get_product.php?id=${modalProductId}`)
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {

@@ -1,4 +1,4 @@
-<?php session_start(); include 'includes/db.php'; ?>
+<?php session_start(); include '../includes/db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
 </head>
 <body>
     <nav>
@@ -68,7 +68,7 @@
         </div>
     </section>
 
-    <?php include 'includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });
@@ -92,7 +92,7 @@
                 const itemTotal = item.price * item.quantity;
                 subtotal += itemTotal;
                 html += `<div class="cart-item" data-index="${index}">
-                    <div class="cart-item-image"><img src="images/${item.image || 'placeholder.jpg'}" alt="${item.name}"></div>
+                    <div class="cart-item-image"><img src="../images/${item.image || 'placeholder.jpg'}" alt="${item.name}"></div>
                     <div class="cart-item-details">
                         <h4>${item.name}</h4>
                         <span class="cart-item-price">Rs. ${item.price.toLocaleString()}</span>
@@ -144,7 +144,7 @@
         }
         function proceedToCheckout() {
             if (cart.length === 0) { showNotification('Your cart is empty!'); return; }
-            fetch('api/check_login.php')
+            fetch('check_login.php')
                 .then(res => res.json())
                 .then(data => {
                     if (data.logged_in) window.location.href = 'checkout.php';
@@ -168,33 +168,24 @@
             }, 100);
         }
 
-        // =========================================
-        // NEW: Promo Code Functionality
-        // =========================================
         function applyPromo() {
             const promoInput = document.getElementById('promoInput');
             const code = promoInput.value.trim();
             const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            
-            // Valid promo codes and their discount percentages
             const promoCodes = {
-                'MELLOW10': 0.10,  // 10% off
-                'SWEET20': 0.20,   // 20% off
-                'FREE': 1.00       // 100% free (for testing)
+                'MELLOW10': 0.10,
+                'SWEET20': 0.20,
+                'FREE': 1.00
             };
-
             if (code in promoCodes) {
                 const discountPercent = promoCodes[code];
                 const discountAmount = subtotal * discountPercent;
                 const newSubtotal = subtotal - discountAmount;
                 const newTotal = newSubtotal + DELIVERY_FEE;
-
-                // Update the UI
                 document.getElementById('subtotal').textContent = `Rs. ${newSubtotal.toLocaleString()}`;
                 document.getElementById('totalAmount').textContent = `Rs. ${newTotal.toLocaleString()}`;
-                
                 showNotification(`✅ Promo applied! You saved Rs. ${discountAmount.toLocaleString()}`);
-                promoInput.value = ''; // Clear the input
+                promoInput.value = '';
             } else {
                 showNotification('❌ Invalid promo code. Try MELLOW10, SWEET20, or FREE.');
             }
@@ -204,7 +195,7 @@
             const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
             if (cartItems.length > 0) {
                 const ids = cartItems.map(item => item.id).join(',');
-                fetch(`api/get_product_images.php?ids=${ids}`)
+                fetch(`get_product_images.php?ids=${ids}`)
                     .then(res => res.json())
                     .then(data => {
                         if (data.success) {
@@ -232,5 +223,4 @@
         .notification-icon { background: var(--primary); color: var(--background); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
     </style>
 </body>
-</html>
 </html>

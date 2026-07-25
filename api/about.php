@@ -1,4 +1,4 @@
-<?php session_start(); include 'includes/db.php'; ?>
+<?php session_start(); include '../includes/db.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
     <nav>
@@ -39,7 +39,7 @@
     <section class="story-section" data-aos="fade-up">
         <div class="container">
             <div class="story-grid">
-                <div class="story-image" data-aos="fade-right"><img src="images/logo.png" alt="Baking Mellow Kitchen"><div class="image-caption"><span>Since 2024</span></div></div>
+                <div class="story-image" data-aos="fade-right"><img src="../images/logo.png" alt="Baking Mellow Kitchen"><div class="image-caption"><span>Since 2024</span></div></div>
                 <div class="story-content" data-aos="fade-left">
                     <span class="subtitle">Our Journey</span>
                     <h2>The Sweet Beginning</h2>
@@ -79,7 +79,7 @@
                     <p class="baker-text">From my first imperfect cake to the elegant creations we craft today, every step has been a labor of love. I believe that baking is more than just mixing ingredients — it's about creating moments of happiness.</p>
                     <div class="baker-quote"><i class="fas fa-quote-left"></i><blockquote>"Every cake tells a story. Every croissant holds a memory. I bake because it's how I share my heart with the world."</blockquote><cite>— Meerab Imran</cite></div>
                 </div>
-                <div class="baker-image" data-aos="fade-left"><img src="images/baker.jpg" alt="Meet the Baker"><div class="baker-badge"><i class="fas fa-heart"></i><span>Since 2024</span></div></div>
+                <div class="baker-image" data-aos="fade-left"><img src="../images/baker.jpg" alt="Meet the Baker"><div class="baker-badge"><i class="fas fa-heart"></i><span>Since 2024</span></div></div>
             </div>
         </div>
     </section>
@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <?php include 'includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });
