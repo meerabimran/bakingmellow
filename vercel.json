@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "api/*.php": {
-      "runtime": "shivammathur/vercel-php@0.6.0"
-    }
-  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/index.php" }
   ]
