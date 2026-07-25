@@ -1,12 +1,23 @@
 <?php
-$host = 'sql113.infinityfree.com';  // InfinityFree standard host
-$username = 'if0_42432631';           // The username you copied in Step 2
-$password = 'Meerab11223344'; // The password you set in Step 2
-$database = 'if0_42432631_baking_mellow_db'; // The database name you copied in Step 2
+// Aiven MySQL Connection with SSL (No hardcoded password)
+$host = getenv('DB_HOST') ?: 'mysql-c14d984-bakingmellow.l.aivencloud.com';
+$port = getenv('DB_PORT') ?: 22551;
+$username = getenv('DB_USER') ?: 'avnadmin';
+$password = getenv('DB_PASSWORD'); // Password will come from Vercel
+$database = getenv('DB_NAME') ?: 'defaultdb';
 
-$conn = new mysqli($host, $username, $password, $database);
+// SSL Options (Required for Aiven)
+$ssl_options = [
+    MYSQLI_OPT_SSL_VERIFY_SERVER_CERT => true,
+];
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$conn = mysqli_init();
+mysqli_ssl_set($conn, NULL, NULL, NULL, NULL, NULL);
+
+// Attempt connection
+if (!$conn->real_connect($host, $username, $password, $database, $port, NULL, MYSQLI_CLIENT_SSL)) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+
+echo "✅ Connected to Aiven MySQL successfully!";
 ?>
