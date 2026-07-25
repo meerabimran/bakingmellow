@@ -1,18 +1,8 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index.php" }
-  ]
-}
-  ],
-  "headers": [
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/html; charset=utf-8"
-        }
-      ]
+      "destination": "/api/index.php"
     }
   ]
 }
