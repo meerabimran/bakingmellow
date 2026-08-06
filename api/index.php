@@ -1,7 +1,7 @@
 <?php header('Content-Type: text/html; charset=utf-8'); ?>
 <?php
-session_start();
 include '../includes/db.php';
+// ... the rest of your code
 ?>
 <!DOCTYPE html>
 <html lang="en">

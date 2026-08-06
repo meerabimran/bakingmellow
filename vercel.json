@@ -1,13 +1,19 @@
 {
-  "functions": {
-    "api/**/*.php": {
-      "runtime": "vercel-php@0.7.4"
-    }
-  },
   "rewrites": [
+    { 
+      "source": "/(.*)", 
+      "destination": "/api/index.php"
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/api/index.php"
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
     }
   ]
 }
