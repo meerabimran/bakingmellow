@@ -1,3 +1,14 @@
 .git/
 .vscode/
 node_modules/
+
+# Root-level copies duplicate /admin pages and must not become public endpoints.
+/add_product.php
+/customers.php
+/edit_product.php
+/index.php
+/login.php
+/logout.php
+/messages.php
+/orders.php
+/products.php

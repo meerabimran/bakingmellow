@@ -1,19 +1,32 @@
 {
+  "version": 2,
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.4"
+    }
+  },
   "rewrites": [
-    { 
-      "source": "/(.*)", 
-      "destination": "/api/index.php"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/html; charset=utf-8"
-        }
-      ]
-    }
+    { "source": "/", "destination": "/api/index.php" },
+    { "source": "/index.php", "destination": "/api/index.php" },
+    { "source": "/menu", "destination": "/api/menu.php" },
+    { "source": "/menu.php", "destination": "/api/menu.php" },
+    { "source": "/about", "destination": "/api/about.php" },
+    { "source": "/about.php", "destination": "/api/about.php" },
+    { "source": "/contact", "destination": "/api/contact.php" },
+    { "source": "/contact.php", "destination": "/api/contact.php" },
+    { "source": "/cart", "destination": "/api/cart.php" },
+    { "source": "/cart.php", "destination": "/api/cart.php" },
+    { "source": "/checkout", "destination": "/api/checkout.php" },
+    { "source": "/checkout.php", "destination": "/api/checkout.php" },
+    { "source": "/login", "destination": "/api/login.php" },
+    { "source": "/login.php", "destination": "/api/login.php" },
+    { "source": "/register", "destination": "/api/register.php" },
+    { "source": "/register.php", "destination": "/api/register.php" },
+    { "source": "/my-orders", "destination": "/api/my_orders.php" },
+    { "source": "/my_orders.php", "destination": "/api/my_orders.php" },
+    { "source": "/logout.php", "destination": "/api/logout.php" },
+    { "source": "/check_login.php", "destination": "/api/check_login.php" },
+    { "source": "/get_product.php", "destination": "/api/get_product.php" },
+    { "source": "/get_product_images.php", "destination": "/api/get_product_images.php" }
   ]
 }
