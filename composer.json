@@ -1,5 +1,5 @@
 {
-    "require": {
-        "vercel/php": "^0.7"
-    }
+    "name": "baking-mellow/bakery",
+    "description": "Baking Mellow bakery website",
+    "require": {}
 }
