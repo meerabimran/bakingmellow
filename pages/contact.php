@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/db.php';
+include __DIR__ . '/../includes/db.php';
 
 $success_message = '';
 $error_message = '';
@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container"><div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3482.093291712978!2d72.67454247557423!3d32.20490467378562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3898d5ab654ec9e1%3A0x5b6f6e7e3d4e2b4c!2sSargodha%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div></div>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });

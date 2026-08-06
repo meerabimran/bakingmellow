@@ -24,7 +24,7 @@ if (isset($routes[$path])) {
 }
 
 header('Content-Type: text/html; charset=utf-8');
-include '../includes/db.php';
+include __DIR__ . '/../includes/db.php';
 // ... the rest of your code
 ?>
 <!DOCTYPE html>

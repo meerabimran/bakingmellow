@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/db.php';
+include __DIR__ . '/../includes/db.php';
 if (isset($_SESSION['user_id'])) { header('Location: index.php'); exit(); }
 
 $error = '';
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 
-    <?php include '../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });

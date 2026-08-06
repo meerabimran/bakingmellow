@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/db.php';
+include __DIR__ . '/../includes/db.php';
 
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 $category = isset($_GET['category']) ? $_GET['category'] : '';
@@ -150,7 +150,7 @@ $categories = $conn->query("SELECT DISTINCT category FROM products")->fetch_all(
         </div>
     </div>
 
-    <?php include '../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 100 });

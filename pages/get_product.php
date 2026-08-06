@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include '../includes/db.php';
+include __DIR__ . '/../includes/db.php';
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = intval($_GET['id']);
