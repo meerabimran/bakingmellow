@@ -1,5 +1,29 @@
-<?php header('Content-Type: text/html; charset=utf-8'); ?>
 <?php
+// Vercel Hobby supports up to 12 functions. This file is the single public
+// function and dispatches each page/API request to source files in /pages.
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+$routes = [
+    '/menu' => 'menu.php', '/menu.php' => 'menu.php',
+    '/about' => 'about.php', '/about.php' => 'about.php',
+    '/contact' => 'contact.php', '/contact.php' => 'contact.php',
+    '/cart' => 'cart.php', '/cart.php' => 'cart.php',
+    '/checkout' => 'checkout.php', '/checkout.php' => 'checkout.php',
+    '/login' => 'login.php', '/login.php' => 'login.php',
+    '/register' => 'register.php', '/register.php' => 'register.php',
+    '/my-orders' => 'my_orders.php', '/my_orders.php' => 'my_orders.php',
+    '/logout.php' => 'logout.php',
+    '/check_login.php' => 'check_login.php',
+    '/get_product.php' => 'get_product.php',
+    '/get_product_images.php' => 'get_product_images.php',
+    '/cancel_order.php' => 'cancel_order.php',
+];
+
+if (isset($routes[$path])) {
+    require __DIR__ . '/../pages/' . $routes[$path];
+    exit;
+}
+
+header('Content-Type: text/html; charset=utf-8');
 include '../includes/db.php';
 // ... the rest of your code
 ?>
