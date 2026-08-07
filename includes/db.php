@@ -9,7 +9,9 @@ $database = getenv('DB_NAME') ?: 'defaultdb';
 $conn = mysqli_init();
 mysqli_ssl_set($conn, null, null, null, null, null);
 
-if (!$conn->real_connect($host, $username, $password, $database, $port, null, MYSQLI_CLIENT_SSL)) {
+// Handle unavailable DNS/database services without exposing PHP warnings to visitors.
+mysqli_report(MYSQLI_REPORT_OFF);
+if (!$conn || !$conn->real_connect($host, $username, $password, $database, $port, null, MYSQLI_CLIENT_SSL)) {
     error_log('Database connection failed: ' . mysqli_connect_error());
     http_response_code(500);
     exit('The service is temporarily unavailable. Please try again later.');
